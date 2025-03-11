@@ -1,46 +1,346 @@
-/* file css */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White Background */
+    color: #1b3c34; /* Dark Green Text */
+}
 
-/* Header CSS */
-.main-header{
+/* Header */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.main-logo{
-    border: 1px solid;
-    height: 50px;
-    background-image: url(https://picsum.photos/id/237/200/300);
-    width: 50px;
-    border-radius: 50%;
-    margin-left:25px;
-}
-.main-nav > a{
-    border: 1px solid;
-    padding: 5px 30px 5px 30px;
-    color: black;
-    text-decoration: none;
+    background-color: #1b3c34; /* Dark Green */
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.home-banner{
-    border: 2px solid;
-    height: 400px;
+/* Logo */
+.main-logo {
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+
 }
-.our-profile-content{
-    border: 2px solid;
-    height: 400px;
+
+/* Navigation */
+.main-nav > a {
+    color: #ffffff; /* White Text */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-.achievement-content{
-    border: 2px solid;
-    height: 400px;
+
+.main-nav > a:hover {
+    background-color: #ffffff;
+    color: #1b3c34;
+    font-weight: bold;
 }
-.message-us-content{
-    border: 2px solid;
-    height: 400px;
+
+/* Home Slideshow */
+.home-slideshow {
+    position: relative;
+    width: 1366px;
+    height: 578px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-footer{
-    border: 2px solid;
-    padding-right: 10px;
+
+/* Slide Images */
+.slide {
+    display: none;
+    width: 1366px;
+    height: 578px;
+}
+
+.slide img {
+    width: 1366px;
+    height: 578px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#our-profile {
+    background-color: #ffffff; /* White background */
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-size: 15px;
+}
+
+.our-profile-content {
+    border: 2px solid #1b3c34; /* Dark Green border */
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.our-profile-content p {
+    color: #333;
+}
+
+
+
+/* Section Headers */
+h1 {
+    color: #1b3c34; /* Dark Green */
+    text-align: center;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+}
+
+/* Profile & Achievement Content */
+#achievement {
+    background-color: #f8f8f8; 
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-content {
+    border: 2px solid #1b3c34;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.achievement-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievement-content li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.achievement-content li:last-child {
+    border-bottom: none;
+}
+/* Sections */
+/* Message Us Section */
+#message-us {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Message Us Container */
+.message-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Message Us Form */
+.message-us-form {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #1b3c34; /* Dark Green Accent */
+    text-align: left;
+}
+
+/* Form Inputs */
+.message-us-form input,
+.message-us-form textarea {
+    width: calc(100% - 20px); /* Prevents overflowing */
+    max-width: 100%; /* Ensures responsiveness */
+    padding: 12px;
     margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #1b3c34;
+    background-color: #ffffff;
+    color: #1b3c34;
+    font-size: 14px;
+    transition: 0.3s;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Expanding Textarea */
+.message-us-form textarea {
+    min-height: 100px;
+    max-height: 300px;
+    resize: vertical;
+    overflow-y: auto;
+}
+/* Gender Field */
+.gender-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between radio options */
+    margin-top: 10px;
+}
+
+.gender-container label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between radio button and text */
+    font-size: 14px;
+    color: #1b3c34;
+}
+
+/* Ensuring radio buttons don't stretch */
+.gender-container input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+/* Form Input Focus Effect */
+.message-us-form input:focus,
+.message-us-form textarea:focus {
+    border-color: #ffcc00; /* Gold Accent */
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 204, 0, 0.5);
+}
+/* Slideshow Dots Container */
+.slideshow-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Individual Dot */
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb; /* Inactive dot color */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Active Dot */
+.active-dot {
+    background-color: #1b3c34; /* Dark Green for active */
+}
+/* Submit Button */
+.message-us-form button {
+    background-color: #1b3c34;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    width: 96% ;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.message-us-form button:hover {
+    background-color: #154734;
+}
+
+/* Message Preview Box */
+.message-us-preview {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    background-color: #e6f0e6;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ffcc00; /* Gold Accent */
+    text-align: left;
+}
+
+/* Message Preview Text */
+.message-us-preview p {
+    font-size: 14px;
+    color: #1b3c34;
+    margin-bottom: 10px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .message-us-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-us-form,
+    .message-us-preview {
+        max-width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1b3c34;
+    color: #ffffff;
+    font-size: 14px;
+    border-top: 2px solid #ffcc00;
 }

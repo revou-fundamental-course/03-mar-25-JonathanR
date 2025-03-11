@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <!-- for responsive purpose -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Jonathan</title>
+    <title>SMAN 1 Susukan</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <body>
+
     <!-- Main Header -->
     <header class="main-header">
         <!-- Logo Website -->
-        <div class="main-logo"></div>
+        <img src="assets/logo.png" alt="SMAN 1 Susukan Logo" class="main-logo">
 
         <!-- Navigation -->
         <nav class="main-nav">
@@ -27,21 +30,43 @@
 
     </header>
 
-    <hr color="black"/>
+    <hr color="black" />
 
     <!-- Main Content -->
     <main>
         <!-- Home Content -->
         <div id="home">
             <header>
-                <h1>Hi User, Welcome To My Website</h1>
+                <h1>Hi <span id="welcome-name"></span>, Welcome To Website Sekolah SMAN 1 Susukan</h1>
             </header>
 
             <!-- IMG AutoSlider -->
-            <div class="home-banner"></div>
+            <!-- IMG AutoSlider -->
+            <div class="home-slideshow">
+                <div class="slide fade">
+                    <img src="assets/home/slideshow1.jpg" alt="Slide 1">
+                </div>
+                <div class="slide fade">
+                    <img src="assets/home/slideshow2.jpg" alt="Slide 2">
+                </div>
+                <div class="slide fade">
+                    <img src="assets/home/slideshow3.jpg" alt="Slide 3">
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="slideshow-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+
         </div>
 
-        <hr color="black"/>
+        <hr color="black" />
 
         <!-- Our Profile Content -->
         <div id="our-profile">
@@ -49,11 +74,44 @@
                 <h1>Our Profile</h1>
             </header>
 
-            <div class="our-profile-content"></div>
+
+            <div class="our-profile-content">
+                <h2>📍 Location</h2>
+                <p>JL. PROF. DR. MOH. YAMIN, SH</p>
+
+                <h2>🏫 School Type</h2>
+                <p>Public High School</p>
+
+                <h2>📖 About SMAN 1 Susukan</h2>
+                <p>SMAN 1 Susukan is a public high school committed to producing <strong>intelligent, ethical, and
+                        patriotic graduates</strong> with strong <strong>IT skills</strong> and <strong>high
+                        integrity</strong>. We provide a <strong>balanced education</strong> that fosters academic
+                    excellence, character building, and technological competence.</p>
+
+                <h2>🌟 Vision</h2>
+                <p><em>“TERWUJUDNYA LULUSAN YANG CERDAS, BERINTEGRITAS, PATRIOTIK, MENGUASAI 'IT', DAN BERAKHLAK
+                        MULIA.”</em></p>
+
+                <h2>🎯 Mission</h2>
+                <ul>
+                    <li>📌 Strengthening religious and moral education.</li>
+                    <li>📌 Promoting environmental awareness and sustainability.</li>
+                    <li>📌 Encouraging entrepreneurship among students.</li>
+                    <li>📌 Enhancing IT-based learning and infrastructure.</li>
+                    <li>📌 Instilling patriotism through national events.</li>
+                    <li>📌 Organizing science competitions and Olympiads.</li>
+                    <li>📌 Supporting sports, arts, and cultural activities.</li>
+                    <li>📌 Promoting literacy and critical thinking skills.</li>
+                    <li>📌 Building partnerships with external institutions.</li>
+                </ul>
+
+                <h2>📧 Contact Us</h2>
+                <p>Email: <a href="mailto:info@smanesus.sch.id">info@smanesus.sch.id</a></p>
+            </div>
 
         </div>
 
-        <hr color="black"/>
+        <hr color="black" />
 
         <!-- Achievement Content -->
         <div id="achievement">
@@ -61,11 +119,24 @@
                 <h1>Achievement</h1>
             </header>
 
-            <div class="achievement-content"></div>
+
+            <div class="achievement-content">
+                <ul>
+                    <li><strong>🏆 Academic Excellence:</strong> Students won medals in the National Science Olympiad
+                        (OSN).</li>
+                    <li><strong>🎭 Arts & Culture:</strong> 1st place in the Provincial Traditional Dance Competition.
+                    </li>
+                    <li><strong>⚽ Sports Achievements:</strong> Regional champions in soccer and basketball tournaments.
+                    </li>
+                    <li><strong>💻 IT & Innovation:</strong> Winners of the High School Coding Challenge.</li>
+                </ul>
+            </div>
+
+
 
         </div>
 
-        <hr color="black"/>
+        <hr color="black" />
 
         <!-- Message Us Content -->
         <div id="message-us">
@@ -73,7 +144,36 @@
                 <h1>Message Us</h1>
             </header>
 
-            <div class="message-us-content"></div>
+            <div class="message-us-content">
+
+                <form class="message-us-form" name="messageus-form" onsubmit="return validateform()">
+                    Nama:
+                    <input type="text" name="namalengkap" placeholder="Masukan Nama Anda">
+                    <br />
+                    Tanggal Lahir:
+                    <input type="date" name="tgllahir">
+                    <br />
+                    <div class="gender-container">
+                        <label>Jenis Kelamin:</label>
+                        <input type="radio" name="jeniskelamin" id="laki" value="Laki-Laki">
+                        <label for="laki">Laki-Laki</label>
+                        <input type="radio" name="jeniskelamin" id="perempuan" value="Perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                    <br />
+                    Pesan
+                    <textarea name="pesan" placeholder="Pesan"></textarea>
+                    <br />
+                    <button type="submit">Kirim</button>
+                </form>
+                <div class="message-us-form">
+                    <p>Current Time: <span id="currentdatetime"></span></p>
+                    <p>Nama: <span id="nama-pengirim"></span></p>
+                    <p>Tanggal Lahir: <span id="tgllahir-pengirim"></span></p>
+                    <p>Jenis Kelamin: <span id="jeniskelamin-pengirim"></span></p>
+                    <p>Pesan: <span id="pesan-pengirim"></span></p>
+                </div>
+            </div>
 
         </div>
 
@@ -81,9 +181,11 @@
 
     <!-- Main Footer -->
     <footer>
-        <p>&copy; Creater By Jonathan</p>
+        <p>&copy; Created By Jonathan</p>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
