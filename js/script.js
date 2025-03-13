@@ -43,25 +43,41 @@ function pengirimui(nama, tanggallahir, jeniskelamin, pesan) {
     document.getElementById("pesan-pengirim").innerText = pesan;
     document.getElementById("currentdatetime").innerText = formattedDate;
 }
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 1; // Start from the first slide
+let slideInterval;
 
-// Function to show slides based on index
 function showSlides(n) {
-    let slides = document.querySelectorAll(".slide");
-    let dots = document.querySelectorAll(".dot");
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
 
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
 
-    slides.forEach(slide => slide.style.display = "none");
-    dots.forEach(dot => dot.classList.remove("active-dot"));
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active-dot");
+    }
 
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].classList.add("active-dot");
+
+    // Restart auto-slide
+    clearTimeout(slideInterval);
+    slideInterval = setTimeout(() => changeSlide(1), 3000);
 }
 
-// Function to update slides when clicking dots
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
+
+// Start Auto Slide
+document.addEventListener("DOMContentLoaded", function () {
+    showSlides(slideIndex);
+});
