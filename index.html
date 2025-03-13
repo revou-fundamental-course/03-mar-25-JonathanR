@@ -155,10 +155,12 @@
                     <br />
                     <div class="gender-container">
                         <label>Jenis Kelamin:</label>
-                        <input type="radio" name="jeniskelamin" id="laki" value="Laki-Laki">
-                        <label for="laki">Laki-Laki</label>
-                        <input type="radio" name="jeniskelamin" id="perempuan" value="Perempuan">
-                        <label for="perempuan">Perempuan</label>
+                        <label class="gender-option">
+                            <input type="radio" name="jeniskelamin" value="Laki-Laki"> Laki-Laki
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" name="jeniskelamin" value="Perempuan"> Perempuan
+                        </label>
                     </div>
                     <br />
                     Pesan
@@ -166,12 +168,13 @@
                     <br />
                     <button type="submit">Kirim</button>
                 </form>
-                <div class="message-us-form">
-                    <p>Current Time: <span id="currentdatetime"></span></p>
-                    <p>Nama: <span id="nama-pengirim"></span></p>
-                    <p>Tanggal Lahir: <span id="tgllahir-pengirim"></span></p>
-                    <p>Jenis Kelamin: <span id="jeniskelamin-pengirim"></span></p>
-                    <p>Pesan: <span id="pesan-pengirim"></span></p>
+                <!-- PREVIEW SECTION -->
+                <div class="message-us-preview">
+                    <p>🕒 Current Time: <span id="currentdatetime"></span></p>
+                    <p>👤 Nama: <span id="nama-pengirim"></span></p>
+                    <p>🎂 Tanggal Lahir: <span id="tgllahir-pengirim"></span></p>
+                    <p>🚻 Jenis Kelamin: <span id="jeniskelamin-pengirim"></span></p>
+                    <p>💬 Pesan: <span id="pesan-pengirim"></span></p>
                 </div>
             </div>
 
